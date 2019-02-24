@@ -32,3 +32,17 @@ class camera:
 
 	def stop(self):
 		self.event.set()
+		
+if __name__=="__main__":
+	a=camera('192.168.1.1')
+	a.start()
+	while True:
+		try:
+			if a.image!=[]:
+				cv2.imshow("image",a.image)
+				cv2.waitKey(1)
+				
+		except KeyboardInterrupt:
+			a.stop()
+			cv2.destroyAllWindows()
+			break	
