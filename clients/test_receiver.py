@@ -6,14 +6,14 @@ from line_tracker import line_tracker
 
 import cv2
 import time
-
-cam = camera()
+address='192.168.1.1'
+cam = camera(address)
 cam.start()
-inf = infrared()
+inf = infrared(address)
 inf.start()
-ult = ultrasonic()
+ult = ultrasonic(address)
 ult.start()
-lt = line_tracker()
+lt = line_tracker(address)
 lt.start()
 inf_t = time.time()
 

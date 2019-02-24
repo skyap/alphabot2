@@ -27,8 +27,10 @@ class ultrasonic(threading.Thread):
 		time.sleep(0.000015)
 		#time.sleep(0.00001)
 		GPIO.output(self.TRIG,GPIO.LOW)
+		t1 = time.time()
 		while not GPIO.input(self.ECHO):
-			pass
+			if time.time() - t1>0.002:
+				break
 		t1 = time.time()
 		while GPIO.input(self.ECHO):
 			if time.time() - t1>0.002:

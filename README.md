@@ -12,19 +12,26 @@
 3. opencv
 
 ## Program required
-1. VNC (if the Pi running GUI)
+1. VNC Viewer(if the Pi running GUI)
 2. PuTTY(for window user)/ SSH (for linux user)
 3. FileZilla(remote transfer files between pc and pi)
 
 ## Issues
 1. In ad-hoc mode, some time connection establish is not good. If you can't VNC, PuTTY/SSH or FileZilla into Pi after ad-hoc connection, try to disconnect and reconnect again.
+2. OSError: [Errno 98] Address already in use
+	$ sudo netstat -nlp |grep 8000
+	$ sudo kill -9 <process>
 
 ## Step
 1. Power up AlphaBot2-PiZero (USB or batteries)
 2. IP: 192.168.1.1 Port: 22
 3. User Name/ Password: to be inform in class
-
-
-$ sudo shutdown -h now
+4. navigate to Documents
+	$ cd Documents
+	$ cd servers
+	$ python3 
+	
+5. To shutdown
+	$ sudo shutdown -h now
 	
 	
