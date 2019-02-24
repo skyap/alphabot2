@@ -48,3 +48,13 @@ class camera(threading.Thread):
 		self.kill = True
 		socket.socket(socket.AF_INET,socket.SOCK_STREAM).connect( ("0.0.0.0",8000))
 		#server_socket.close()
+if __name__=="__main__":
+	a=camera()
+	a.start()
+	while True:
+		try:
+			time.sleep(100)
+		except KeyboardInterrupt:
+			a.stop()
+			break
+	

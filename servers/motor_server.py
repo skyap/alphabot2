@@ -36,27 +36,48 @@ class motor(threading.Thread):
 		while not self.kill:
 			try:
 				code = recv_one_message(connection).decode("utf-8")
-				command,speed,duration = code.split()
-				print(command,speed,duration)
-				speed = float(speed)
-				duration = float(duration)
-				# forward second speed
-				# backward second speed 
-				# left second speed 
-				# right second speed
-				ab.PA = speed
-				ab.PB = speed 
-				if command == "forward":
-					ab.forward()
-				elif command == "backward":
-					ab.backward()
-				elif command == "left":
-					ab.left()
-				elif command == "right":
-					ab.right()
+				data=code.split()
+				if len(data)==3:
+					command,speed,duration = data
+					#print(command,speed,duration)
+					speed = float(speed)
+					duration = float(duration)
+					# forward second speed
+					# backward second speed 
+					# left second speed 
+					# right second speed
+					ab.setPWMA(speed)
+					ab.setPWMB(speed) 
+					if command == "forward":
+						ab.forward()
+					elif command == "backward":
+						ab.backward()
+					elif command == "left":
+						ab.left()
+					elif command == "right":
+						ab.right()						
+					time.sleep(duration)
+					ab.stop()
+				elif len(data)==2:
+					command,speed = data
+					speed = float(speed)
+					if command == "set_left_speed":
+						ab.setPWMA(speed)
+					if command == "set_right_speed":
+						ab.setPWMB(speed)
+				elif len(data)==1:
+					command = data[0]
+					if command == "forward":
+						ab.forward()
+					elif command == "backward":
+						ab.backward()
+					elif command == "left":
+						ab.left()
+					elif command == "right":
+						ab.right()	
+					elif command == "stop":
+						ab.stop()
 					
-				time.sleep(duration)
-				ab.stop()
 				
 		
 			except (socket.error,TypeError) as e:
