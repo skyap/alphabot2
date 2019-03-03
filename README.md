@@ -51,12 +51,12 @@ after finish press **CTRL+x**, **y**, **ENTER**
 3. IP: 192.168.1.*
 4. Open VNC Viewer
 5. Navigate to File > New Connections, type the IP in VNC Server, press OK, double click on the new icon</br></br>
-6. <img src="images/vnc1.jpg" width="400"></br>
+6. <img src="https://github.com/skyap/AlphaBot2-PiZero/raw/master/images/vnc1.jpg" width="400"></br>
 7. User Name: pi</br>
 8. Password: raspberry</br>
 9. navigate to Documents > Servers</br> 
 10. Tools > Open Current Folder in Terminal</br>
-<img src="images/vnc2.jpg" width="400"></br>
+<img src="https://github.com/skyap/AlphaBot2-PiZero/raw/master/images/vnc2.jpg" width="400"></br>
 11. Modify main.py if you are not going to run all the socket servers
 12. Type below in the terminal</br>
 	$ python3 main.py
