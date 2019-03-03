@@ -31,7 +31,7 @@ while True:
 			inf_t = t
 			
 	except KeyboardInterrupt:
-		cam.stop()
+		#cam.stop()
 		inf.stop()
 		ult.stop()
 		lt.stop()
