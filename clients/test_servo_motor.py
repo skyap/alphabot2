@@ -2,7 +2,7 @@
 from motor import motor
 import time
 
-address = "192.168.1.104"
+address = "192.168.1.114"
 # ser=servo(address)
 
 # for i in range(0,181):
@@ -26,11 +26,11 @@ mot=motor(address)
 # mot.command("left",10,2)
 # mot.command("right",10,2)
 
-mot.command("set_left_speed",10)
-mot.command("set_right_speed",100)
+mot.command("set_left_speed",100)
+mot.command("set_right_speed",0)
 mot.command("forward")
 
-time.sleep(5)
+time.sleep(10)
 # mot.command("backward")
 # time.sleep(10)
 

@@ -6,7 +6,8 @@ from motor_server import motor
 from line_tracker_server import line_tracker
 import time
 
-all_server = [camera,ultrasonic,infrared,servo,motor,line_tracker]
+#all_server = [camera,ultrasonic,infrared,servo,motor,line_tracker]
+all_server = [ultrasonic,infrared,motor,line_tracker]
 
 threads=[]
 for i in all_server:
