@@ -4,7 +4,7 @@ from infrared import infrared
 from line_tracker import line_tracker
 #import cv2
 import time
-address='192.168.1.1'
+address='192.168.1.106'
 #cam = camera(address)
 #cam.start()
 inf = infrared(address)
