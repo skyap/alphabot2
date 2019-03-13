@@ -1,6 +1,13 @@
 # AlphaBot2-PiZero
 ## About
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/alphabot2-pizero-8.JPG" width="400"></br>
+1. To create a easy to use API for students to interact with AlphaBot2-PiZero</br>
+2. Students will be focus on the testing of algorithms on the robot instead of dealing with GPIO on Pi.</br>
 
+official webpage:</br>
+https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
+## Overall project architecture 
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/flow.JPG" width="400"></br>
 ## **_WARNING!!_**
 1. Do not run motors when power Pi Zero W from USB</br>
 2. When weird behaviours occur, such as below, turn off power and charge your battery:</br>
@@ -24,7 +31,7 @@ https://www.coursera.org/learn/python
 ## Program required
 1. VNC Viewer(if the Pi running GUI)</br>
 2. PuTTY(for window user)/ SSH (for linux user)</br>
-~~3. FileZilla(remote transfer files between pc and pi)~~
+
 
 ## Router settings for PiZero W
 1. Use WPA or WPA2 only
