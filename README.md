@@ -122,10 +122,10 @@ lt.stop()
 ```
 ### <u>motor</u>
 ```python
-from motor import motor</br>
-import time</br>
-address = "192.168.1.104"</br>
-mot = motor(address)</br>
+from motor import motor
+import time
+address = "192.168.1.100"
+mot = motor(address)
 
 # below is the general function's parameters and range
 # mot.command(direction,speed,duration)
