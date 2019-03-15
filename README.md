@@ -14,23 +14,28 @@ https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
 	2.1. Servo work fine with your code but when you try it later with the same code it didn't work correctly.</br>
 	2.2. Conectivity to Pi Zero W suddenly drop.</br>
 3. AlpahBot2 have to be on the floor before you run any commands on motors.
-4. Do not turn the servo with hand, before and after start main.py. It will break the servo. Refer to <a href="https://arduino.stackexchange.com/questions/4076/what-is-commonly-done-to-stop-a-servo-after-reaching-desired-position">what is commonly done to stop a servo after reaching desired position</br></br>
+4. Do not turn the servo with hand, before and after start main.py. It will break the servo. Refer to <a href="https://arduino.stackexchange.com/questions/4076/what-is-commonly-done-to-stop-a-servo-after-reaching-desired-position">what is commonly done to stop a servo after reaching desired position</a></br></br>
 "**_A servo is always running. In a general sense, the servo is a control loop that takes as input a position target and applies force to hold at the requested target._**"
 
 
-## Softwares and libries required
+## Softwares and libries required on PC/ Laptop
 1. python3+ 
 2. numpy (not required for the moment)
 3. opencv (not required for the moment)
 4. IDE (PyCharm, IDLE, Stani's Python Editor, Spyder, Jupyter Notebook, Notepad, Notepad++, etc.)
-
-## Python resources
+## Library required on PiZero W 
+```
+$ pip3 install psutil
+$ sudo apt install lsof
+```
+## Python learning resources
 if you are new to python, below is the best beginner course for you:</br>
 https://www.coursera.org/learn/python
 
-## Program required
+## Program required on PC/ Laptop
 1. VNC Viewer(if the Pi running GUI)</br>
 2. PuTTY(for window user)/ SSH (for linux user)</br>
+
 
 
 ## Router settings for PiZero W
@@ -38,23 +43,29 @@ https://www.coursera.org/learn/python
 2. Ensure it is 2.4GHz
 
 ## Step for connect to another WIFI
-$ cd /etc/wpa_supplicant</br>
-$ sudo nano wpa_supplicant.conf</br>
-put below in the the file:</br></br>
-network={</br>
-&nbsp; &nbsp; &nbsp; &nbsp;ssid="Robot"</br>
-&nbsp; &nbsp; &nbsp; &nbsp;psk="1234567890"</br>
-&nbsp; &nbsp; &nbsp; &nbsp;priority=1</br>
-&nbsp; &nbsp; &nbsp; &nbsp;scan_ssid=1</br>
-}</br>
+```
+$ cd /etc/wpa_supplicant
+$ sudo nano wpa_supplicant.conf
+```
+put below in the the file:</br>
+```
+network={
+	ssid="Robot"
+	psk="1234567890"
+	priority=1
+	scan_ssid=1
+}
+```
 
 change the **_ssid_** and **_psk_** to your router id and password</br>
 after finish press **CTRL+x**, **y**, **ENTER**
 ## Before start
 1. Download latest repository from https://github.com/skyap/AlphaBot2-PiZero
-    * on AlphaBot2-PiZero or laptop, open terminal and type:</br>
-	$ git clone https://github.com/skyap/AlphaBot2-PiZero
-2. Alternatively , downlaod and unzip the folder
+2. On AlphaBot2-PiZero or laptop, open terminal and type:</br>
+```
+$ git clone https://github.com/skyap/AlphaBot2-PiZero
+```
+3. Alternatively , downlaod and unzip the folder
 
 ## Step for connect to AlphaBot2-PiZero
 1. Power up AlphaBot2-PiZero (USB or batteries)
@@ -72,8 +83,9 @@ after finish press **CTRL+x**, **y**, **ENTER**
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/vnc2.JPG" width="400"></br>
 3. Modify main.py if you are not going to run all the socket servers
 4. Type below in the terminal</br>
-	$ python3 main.py
-
+```
+$ python3 main.py
+```
 ## Step to shutdown socket server
 **_CTRL+c_** or **_CTRL+z_**
 ## Step to shutdown AlphaBot2-PiZero
@@ -81,63 +93,100 @@ after finish press **CTRL+x**, **y**, **ENTER**
 
 ## Issues
 1. In ad-hoc mode, some time connection establish is not good. If you can't VNC, PuTTY/SSH or FileZilla into Pi after ad-hoc connection, try to disconnect and reconnect again.</br></br>
-2. OSError: [Errno 98] Address already in use  
-	$ sudo netstat -nlp | grep 8000</br>
-	$ sudo kill -9 123
+2. OSError: [Errno 98] Address already in use 
+``` 
+$ sudo netstat -nlp | grep 8000
+$ sudo kill -9 123
+```
 
-## Examples
+## Functions
+***
 ### <u>line tracker</u>
+```python
 from line_tracker import line_tracker</br>
 import time</br>
-address = "192.168.1.104"</br>
-lt = line_tracker(address)</br>
+# IP adddress of your robot
+address  = "192.168.1.100"
+# create line tracker object
+lt = line_tracker(address)
+# start reading data from server
 lt.start()</br>
-for i in range(100):</br>
-&nbsp; &nbsp; &nbsp; &nbsp;# stop for one second</br>
-&nbsp; &nbsp; &nbsp; &nbsp;time.sleep(1)</br>
-&nbsp; &nbsp; &nbsp; &nbsp;if lt.data==0:</br>
-&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;continue</br>
-&nbsp; &nbsp; &nbsp; &nbsp;print(lt.data)</br>
-lt.stop()</br>
-
-
+for i in range(100):
+	# stop for one second
+	time.sleep(1)
+	if lt.data==0:
+	continue
+	# lt.data is an array with 5 elements
+	print(lt.data)
+# remember to stop the socket connection
+lt.stop()
+```
+***
 ### <u>motor</u>
+```python
 from motor import motor</br>
 import time</br>
 address = "192.168.1.104"</br>
 mot = motor(address)</br>
 
-&#35; mot.command(direction,speed,duration)</br>
-&#35; parameters: </br>
-&#35; &nbsp; &nbsp; &nbsp; &nbsp;direction: "forward","backward","left","right","set_left_speed","set_right_speed","stop"</br>
-&#35; &nbsp; &nbsp; &nbsp; &nbsp;speed: 0-100</br>
-&#35; &nbsp; &nbsp; &nbsp; &nbsp;duration: second</br>
+# below is the general function's parameters and range
+# mot.command(direction,speed,duration)
+# parameters:
+# direction: "forward","backward","left","right","set_left_speed","set_right_speed","stop"
+# speed: 0-100
+# duration: second
 
-mot.command("forward",20,5)</br>
-mot.command("set_left_speed",10)</br>
-mot.command("set_right_speed",10)</br>
-mot.command("forward")</br>
-time.sleep(5)</br>
-mot.command("stop")</br>
-time.sleep(1)</br>
-mot.command("backward")</br>
-time.sleep(5)</br>
-mot.command("stop")</br>
-time.sleep(1)</br>
-mot.command("left")</br>
-time.sleep(5)</br>
-mot.command("stop")</br>
-time.sleep(1)</br>
-mot.command("right")</br>
-time.sleep(5)</br>
-mot.command("stop")</br>
+# run forward at 20 speed for 5 seconds
+mot.command("forward",20,5)
 
-&#35; stop the motor client socket</br>
-mot.stop()</br>
+# set speed of left and right and ask robot to move forward
+mot.command("set_left_speed",10)
+mot.command("set_right_speed",10)
+mot.command("forward")
+time.sleep(5)
+# stop moving , speed set to zero
+mot.command("stop")
+time.sleep(1)
 
+# set speed of left and right and ask robot to move backward
+mot.command("set_left_speed",10)
+mot.command("set_right_speed",10)
+mot.command("backward")
+time.sleep(5)
+mot.command("stop")
+time.sleep(1)
 
+# spin turn  
+mot.command("set_left_speed",10)
+mot.command("set_right_speed",10)
+mot.command("left")
+time.sleep(5)
+mot.command("stop")
+time.sleep(1)
 
+# spin turn 
+mot.command("set_left_speed",10)
+mot.command("set_right_speed",10)
+mot.command("right")
+time.sleep(5)
+mot.command("stop")
 
+# remember to stop the socket connection
+mot.stop()
+```
+***
+
+## Robot basic
+1. Type of turning</br>
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400">
+
+***
+## Assignments:
+1. Straight line 
+2. Straight line to and fro
+3. T - junctions to and fro
+4. ???
+5. ???
 
 
 	
