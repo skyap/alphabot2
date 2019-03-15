@@ -100,7 +100,6 @@ $ sudo kill -9 123
 ```
 
 ## Functions
-***
 ### <u>line tracker</u>
 ```python
 from line_tracker import line_tracker</br>
@@ -115,13 +114,12 @@ for i in range(100):
 	# stop for one second
 	time.sleep(1)
 	if lt.data==0:
-	continue
+		continue
 	# lt.data is an array with 5 elements
 	print(lt.data)
 # remember to stop the socket connection
 lt.stop()
 ```
-***
 ### <u>motor</u>
 ```python
 from motor import motor</br>
@@ -174,13 +172,11 @@ mot.command("stop")
 # remember to stop the socket connection
 mot.stop()
 ```
-***
 
 ## Robot basic
 1. Type of turning</br>
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400">
 
-***
 ## Assignments:
 1. Straight line 
 2. Straight line to and fro
