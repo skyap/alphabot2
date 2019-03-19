@@ -176,13 +176,31 @@ mot.stop()
 ## Robot basic
 1. Type of turning</br>
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400">
+2. Spin turn by setting both wheel speed similiar(plus and minus based on your experience) and send left or right command
+3. Pivot turn by setting one wheel speed and send left or right command
 
 ## Assignments:
 1. Straight line 
 2. Straight line to and fro
 3. T - junctions to and fro
-4. ???
-5. ???
+4. maze (see below section for final assignment)
+5. maze shortest path
+
+## Note and rules for final assignment:
+1. Simply connected line maze will be used (no loops)
+2. Black line on a while or bright background.
+3. Each line maze has a start and finish point. The robot is expected to follow the lines and find it's way from start to finish. No mark is giving based on finishing time.
+4. 8 possible turns and routes enconder in the maze 
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/maze1.jpg" width="400">
+5. Below will not be implemented
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/acute_turn.jpg" width="400">
+3. line will be at least visible by one sensor all the time
+4. This is the examples of line maze(with left hand rule)
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1.jpg" width="400">
+5. This is the example of line maze shortest path from start to finish
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path.jpg" width="400">
+6. This is the example of line maze shortest path from finish to start 
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path2.jpg" width="400">
 
 
 	
