@@ -28,6 +28,35 @@ https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
 $ pip3 install psutil
 $ sudo apt install lsof
 ```
+
+## Setup Pi for auto run script on startup
+1. install screen
+```
+$ sudo apt-get install screen
+
+```
+2. Put below code inside crontab
+```
+$ sudo crontab -e
+
+PYTHONPATH = /home/pi/.local/lib/python3.5/site-packages/
+@reboot screen -d -m /home/pi/AlphaBot2-PiZero/servers/main.py > /home/pi/AlphaBot2-PiZero/servers/logfile 2>&1
+```
+3. Allow main.py to be executed as program
+```
+$ chmod +x main.py
+```
+4. Change the Pi to boot into CLI
+5. SSH into Pi and attached the screen of the AlphaBot2-PiZero
+```
+$ ssh pi@192.168.0.100
+$ password: raspberry
+$ sudo screen -ls
+$ sudo screen -r 255
+```
+
+
+
 ## Python learning resources
 if you are new to python, below is the best beginner course for you:</br>
 https://www.coursera.org/learn/python
@@ -194,12 +223,12 @@ mot.stop()
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/maze1.jpg" width="400">
 5. Below will not be implemented
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/acute_turn.jpg" width="400">
-3. line will be at least visible by one sensor all the time
-4. This is the examples of line maze(with left hand rule)
+6. line will be at least visible by one sensor all the time</br>
+7. This is the examples of line maze(with left hand rule)
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1.jpg" width="400">
-5. This is the example of line maze shortest path from start to finish
+8. This is the example of line maze shortest path from start to finish
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path.jpg" width="400">
-6. This is the example of line maze shortest path from finish to start 
+9. This is the example of line maze shortest path from finish to start 
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path2.jpg" width="400">
 
 
