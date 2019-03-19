@@ -214,8 +214,18 @@ mot.stop()
 3. T - junctions to and fro
 4. maze (see below section for final assignment)
 5. maze shortest path
+## Note for assignment 1 and 2:
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to.jpg" width="400"></br>
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to_and_fro.jpg" width="400"></br>
+1. Line tracker sensors return analog readings. You need to convert this to digital for decision making.</br>
+2. You need to understand what your sensors' logic in different situation:</br>
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/logic1.jpg" width="400">
 
-## Note and rules for final assignment:
+## Note for assignment 3
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/t-junctions.jpg" width="400"></br>
+1. Simple straight line with branches 
+
+## Note and rules for assignment 4 and 5:
 1. Simply connected line maze will be used (no loops)
 2. Black line on a while or bright background.
 3. Each line maze has a start and finish point. The robot is expected to follow the lines and find it's way from start to finish. No mark is giving based on finishing time.
