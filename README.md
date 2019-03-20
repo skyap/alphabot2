@@ -201,9 +201,10 @@ mot.stop()
 
 ## Robot basic
 1. Type of turning</br>
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400">
+<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400"></br>
 2. Spin turn by setting both wheel speed similiar(plus and minus based on your experience) and send left or right command
 3. Pivot turn by setting one wheel speed and send left or right command
+
 ## Background of line following robot:
 1. Below are some of the earliest maze solver robots.</br>
 http://cyberneticzoo.com/tag/amazing-micromouse-maze-contest/</br>
