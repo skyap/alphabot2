@@ -23,15 +23,12 @@ https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
 2. numpy (not required for the moment)
 3. opencv (not required for the moment)
 4. IDE (PyCharm, IDLE, Stani's Python Editor, Spyder, Jupyter Notebook, Notepad, Notepad++, etc.)
-## Library required on PiZero W 
+
+## Setup Pi for auto run script on startup
+1. install required packages
 ```
 $ pip3 install psutil
 $ sudo apt install lsof
-```
-
-## Setup Pi for auto run script on startup
-1. install screen
-```
 $ sudo apt-get install screen
 
 ```
@@ -207,6 +204,11 @@ mot.stop()
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400">
 2. Spin turn by setting both wheel speed similiar(plus and minus based on your experience) and send left or right command
 3. Pivot turn by setting one wheel speed and send left or right command
+## Background of line following robot:
+1. Below are some of the earliest maze solver robots.</br>
+http://cyberneticzoo.com/tag/amazing-micromouse-maze-contest/</br>
+http://cyberneticzoo.com/wp-content/uploads/2011/08/Emily-Popular-Electronics-Mar-1962.pdf
+2. Maze solver is actually SLAM(simultaneous localization and mapping). However we are not going to do mapping in the assignment(encoder is required). We will only solve localized shortest path.
 
 ## Assignments:
 1. Straight line 
