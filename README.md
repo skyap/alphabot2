@@ -211,9 +211,10 @@ mot.stop()
 ## Assignments:
 1. Straight line 
 2. Straight line to and fro
+<iframe width="560" height="315" src="https://youtu.be/e3iG1YwLLdQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></br>
 3. T - junctions to and fro
-4. maze (see below section for final assignment)
-5. maze shortest path
+4. maze solving
+5. maze shortest path(mapping)
 ## Note for assignment 1 and 2:
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to.jpg" width="400"></br>
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to_and_fro.jpg" width="400"></br>
@@ -229,7 +230,7 @@ mot.stop()
 1. Simply connected line maze will be used (no loops)
 2. Black line on a while or bright background.
 3. Each line maze has a start and finish point. The robot is expected to follow the lines and find it's way from start to finish. No mark is giving based on finishing time.
-4. 8 possible turns and routes enconder in the maze 
+4. 8 maze possibilities
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/maze1.jpg" width="400">
 5. Below will not be implemented
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/acute_turn.jpg" width="400">
