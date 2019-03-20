@@ -211,9 +211,9 @@ mot.stop()
 ## Assignments:
 1. Straight line 
 2. Straight line to and fro</br>
-<a onclick='window.open("https://youtu.be/e3iG1YwLLdQ");return false;' href="#"><img src="https://img.youtube.com/vi/e3iG1YwLLdQ/0.jpg"></a>
+[![Watch the video](https://img.youtube.com/vi/e3iG1YwLLdQ/0.jpg)](https://youtu.be/e3iG1YwLLdQ)
 3. T - junctions to and fro</br>
-[![Watch the video](https://img.youtube.com/vi/7VvkeIZoFew/0.jpg)](https://youtu.be/7VvkeIZoFew){:target="_blank"}
+[![Watch the video](https://img.youtube.com/vi/7VvkeIZoFew/0.jpg)](https://youtu.be/7VvkeIZoFew)
 4. maze solving
 5. maze shortest path(mapping)
 ## Note for assignment 1 and 2:
