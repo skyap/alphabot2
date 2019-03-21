@@ -229,6 +229,7 @@ http://cyberneticzoo.com/wp-content/uploads/2011/08/Emily-Popular-Electronics-Ma
 ## Note for assignment 3
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/t-junctions.jpg" width="400"></br>
 1. Simple straight line with branches 
+2. What your sensors' logic at junction?
 
 ## Note and rules for assignment 4 and 5:
 1. Simply connected line maze will be used (no loops)

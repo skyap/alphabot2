@@ -15,7 +15,10 @@ class motor:
 		# cmd = forward,backward,left,right,set_left_speed,set_right_speed
 		# speed = float 
 		# duration  = float 
-		
+		if speed != None:
+			if speed>100 or speed<0:
+				self.send_one_message("stop")
+				assert False,"Speed should in between 0 and 100"
 		if speed==None and duration==None:
 			data=cmd 
 		elif duration==None:

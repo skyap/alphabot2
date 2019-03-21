@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from camera_server import camera
 from ultrasonic_server import ultrasonic
 from infrared_server import infrared
@@ -9,6 +11,15 @@ import psutil
 from psutil import process_iter
 import subprocess
 import time
+import RPi.GPIO as GPIO
+
+# setup buzzer
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4,GPIO.OUT)
+def beep_on():
+	GPIO.output(4,GPIO.HIGH)
+def beep_off():
+	GPIO.output(4,GPIO.LOW)
 
 
 #all_server = [camera,ultrasonic,infrared,servo,motor,line_tracker]
@@ -23,14 +34,14 @@ def release_ports(ports):
 				#print(type(conns.laddr.port))
 				if conns.laddr.port in ports:
 					print("kill process at port: ",conns.laddr.port)
-					subprocess.check_call(['./release_port.sh',str(conns.laddr.port)])
+					subprocess.check_call(['/home/pi/AlphaBot2-PiZero/servers/release_port.sh',str(conns.laddr.port)])
 					found=True
 					break
 			if found:
 				break
 		except psutil.AccessDenied:
 			continue
-subprocess.check_call(['chmod','+x','release_port.sh'])
+subprocess.check_call(['chmod','+x','/home/pi/AlphaBot2-PiZero/servers/release_port.sh'])
 all_port = [8000,8001,8002,8003,8004,8006] 
 release_ports(all_port)
 
@@ -43,6 +54,10 @@ for i in all_server:
 	thread.start()
 	threads.append(thread)
 print("All Servers Running")
+
+beep_on()
+time.sleep(2)
+beep_off()
 
 while True:
 	try:
