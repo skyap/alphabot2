@@ -6,6 +6,22 @@
 
 official webpage:</br>
 https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
+## Install & Uninstall
+1. install the libaries
+```
+pip install git+https://github.com/skyap/alphabot2.git
+```
+2. add below lines to your python code
+```python
+from alphabot2 import motor,line_tracker
+address = "0.0.0.0"
+mot = motor.motor(address)
+lt = line_tracker.line_tracker(address)
+```
+3. to uninstall it
+```
+pip uninstall alphabot2
+```
 ## Overall project architecture 
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/flow.jpg" width="400"></br>
 ## **_WARNING!!_**
@@ -128,8 +144,8 @@ $ sudo kill -9 123
 ## Functions
 ### <u>line tracker</u>
 ```python
-from line_tracker import line_tracker</br>
-import time</br>
+from line_tracker import line_tracker
+import time
 # IP adddress of your robot
 address  = "192.168.1.100"
 # create line tracker object
