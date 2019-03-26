@@ -265,7 +265,7 @@ http://cyberneticzoo.com/wp-content/uploads/2011/08/Emily-Popular-Electronics-Ma
 8. This is the example of line maze shortest path from start to finish
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path.jpg" width="400">
 9. This is the example of line maze shortest path from finish to start 
-![examplemaze1-shorest_path2.jpg](../images/examplemaze1-shorest_path2.jpg)
+![shortest path 2](../images/examplemaze1-shorest_path2.jpg)
 <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path2.jpg" width="400">
 
 
