@@ -1,11 +1,11 @@
-# AlphaBot2-PiZero
+# alphabot2
 ## About
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/alphabot2-pizero-8.jpg" width="400"></br>
-1. To create a easy to use API for students to interact with AlphaBot2-PiZero</br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/alphabot2-8.jpg" width="400"></br>
+1. To create a easy to use API for students to interact with alphabot2</br>
 2. Students will be focus on the testing of algorithms on the robot instead of dealing with GPIO on Pi.</br>
 
 official webpage:</br>
-https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
+https://www.waveshare.com/wiki/alphabot2</br>
 ## Install, Upgrade and Uninstall
 1. install the libaries
 ```
@@ -27,7 +27,7 @@ lt = line_tracker.line_tracker(address)
 pip uninstall alphabot2
 ```
 ## Overall project architecture 
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/flow.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/flow.jpg" width="400"></br>
 ## **_WARNING!!_**
 1. Do not run motors when power Pi Zero W from USB</br>
 2. When weird behaviours occur, such as below, turn off power and charge your battery:</br>
@@ -57,14 +57,14 @@ $ sudo apt-get install screen
 $ sudo crontab -e
 
 PYTHONPATH = /home/pi/.local/lib/python3.5/site-packages/
-@reboot screen -d -m /home/pi/AlphaBot2-PiZero/servers/main.py > /home/pi/AlphaBot2-PiZero/servers/logfile 2>&1
+@reboot screen -d -m /home/pi/alphabot2/servers/main.py > /home/pi/alphabot2/servers/logfile 2>&1
 ```
 3. Allow main.py to be executed as program
 ```
 $ chmod +x main.py
 ```
 4. Change the Pi to boot into CLI
-5. SSH into Pi and attached the screen of the AlphaBot2-PiZero
+5. SSH into Pi and attached the screen of the alphabot2
 ```
 $ ssh pi@192.168.0.100
 $ password: raspberry
@@ -106,27 +106,27 @@ network={
 change the **_ssid_** and **_psk_** to your router id and password</br>
 after finish press **CTRL+x**, **y**, **ENTER**
 ## Before start
-1. Download latest repository from https://github.com/skyap/AlphaBot2-PiZero
-2. On AlphaBot2-PiZero or laptop, open terminal and type:</br>
+1. Download latest repository from https://github.com/skyap/alphabot2
+2. On alphabot2 or laptop, open terminal and type:</br>
 ```
-$ git clone https://github.com/skyap/AlphaBot2-PiZero
+$ git clone https://github.com/skyap/alphabot2
 ```
 3. Alternatively , downlaod and unzip the folder
 
-## Step for connect to AlphaBot2-PiZero
-1. Power up AlphaBot2-PiZero (USB or batteries)
+## Step for connect to alphabot2
+1. Power up alphabot2 (USB or batteries)
 2. Connect to router "Robot", password: 1234567890
 3. Look for IP of your robot's name in the _DHCP Client Table_, for example: 192.168.1.101
 4. Open VNC Viewer
 5. Navigate to File > New Connections, type the IP in VNC Server, press OK, double click on the new icon</br></br>
-6. <img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/vnc1.JPG" width="400"></br>
+6. <img src="https://github.com/skyap/alphabot2/blob/master/images/vnc1.JPG" width="400"></br>
 7. User Name: pi</br>
 8. Password: raspberry</br>
 
 ## Step for start up socket server
 1. From Destop, navigate to Documents > Servers</br> 
 2. Tools > Open Current Folder in Terminal</br>
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/vnc2.JPG" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/vnc2.JPG" width="400"></br>
 3. Modify main.py if you are not going to run all the socket servers
 4. Type below in the terminal</br>
 ```
@@ -134,7 +134,7 @@ $ python3 main.py
 ```
 ## Step to shutdown socket server
 **_CTRL+c_** or **_CTRL+z_**
-## Step to shutdown AlphaBot2-PiZero
+## Step to shutdown alphabot2
 1. Similiar to how you shutdown Windows
 
 ## Issues
@@ -221,7 +221,7 @@ mot.stop()
 
 ## Robot basic
 1. Type of turning</br>
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/robot_turn.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/robot_turn.jpg" width="400"></br>
 2. Spin turn by setting both wheel speed similiar(plus and minus based on your experience) and send left or right command
 3. Pivot turn by setting one wheel speed and send left or right command
 
@@ -240,14 +240,14 @@ http://cyberneticzoo.com/wp-content/uploads/2011/08/Emily-Popular-Electronics-Ma
 4. maze solving
 5. maze shortest path(mapping)
 ## Note for assignment 1 and 2:
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to.jpg" width="400"></br>
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/to_and_fro.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/to.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/to_and_fro.jpg" width="400"></br>
 1. Line tracker sensors return analog readings. You need to convert this to digital for decision making.</br>
 2. You need to understand what your sensors' logic in different situation:</br>
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/logic1.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/logic1.jpg" width="400">
 
 ## Note for assignment 3
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/t-junctions.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/t-junctions.jpg" width="400"></br>
 1. Simple straight line with branches 
 2. What your sensors' logic at junction?
 
@@ -256,17 +256,16 @@ http://cyberneticzoo.com/wp-content/uploads/2011/08/Emily-Popular-Electronics-Ma
 2. Black line on a while or bright background.
 3. Each line maze has a start and finish point. The robot is expected to follow the lines and find it's way from start to finish. No mark is giving based on finishing time.
 4. 8 maze possibilities
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/maze1.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/maze1.jpg" width="400">
 5. Below will not be implemented
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/acute_turn.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/acute_turn.jpg" width="400">
 6. line will be at least visible by one sensor all the time</br>
 7. This is the examples of line maze(with left hand rule)
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/examplemaze1.jpg" width="400">
 8. This is the example of line maze shortest path from start to finish
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/examplemaze1-shorest_path.jpg" width="400">
 9. This is the example of line maze shortest path from finish to start 
-![shortest path 2](/images/examplemaze1-shorest_path2.jpg)
-<img src="https://github.com/skyap/AlphaBot2-PiZero/blob/master/images/examplemaze1-shorest_path2.jpg" width="400">
+<img src="https://github.com/skyap/alphabot2/blob/master/images/examplemaze1-shorest_path2.jpg" width="400">
 
 
 	
