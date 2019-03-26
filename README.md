@@ -6,19 +6,23 @@
 
 official webpage:</br>
 https://www.waveshare.com/wiki/AlphaBot2-PiZero</br>
-## Install & Uninstall
+## Install, Upgrade and Uninstall
 1. install the libaries
 ```
 pip install git+https://github.com/skyap/alphabot2.git
 ```
-2. add below lines to your python code
+2. if you have install previously and wish to upgrade
+```
+pip install upgrade git+https://github.com/skyap/alphabot2.git
+```
+3. add below lines to your python code
 ```python
 from alphabot2 import motor,line_tracker
 address = "0.0.0.0"
 mot = motor.motor(address)
 lt = line_tracker.line_tracker(address)
 ```
-3. to uninstall it
+4. to uninstall it
 ```
 pip uninstall alphabot2
 ```
