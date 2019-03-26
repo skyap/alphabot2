@@ -1,6 +1,6 @@
 # alphabot2
 ## About
-<img src="https://github.com/skyap/alphabot2/blob/master/images/alphabot2-8.jpg" width="400"></br>
+<img src="https://github.com/skyap/alphabot2/blob/master/images/alphabot2-pizero-8.jpg" width="400"></br>
 1. To create a easy to use API for students to interact with alphabot2</br>
 2. Students will be focus on the testing of algorithms on the robot instead of dealing with GPIO on Pi.</br>
 
