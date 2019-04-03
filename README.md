@@ -1,5 +1,5 @@
 # alphabot2
-https://github.com/skyap/alphabot2/README_python_installation.md
+https://github.com/skyap/alphabot2/blob/master/README_python_installation.md
 ## About
 <img src="https://github.com/skyap/alphabot2/blob/master/images/alphabot2-pizero-8.jpg" width="400"></br>
 1. To create a easy to use API for students to interact with alphabot2</br>
