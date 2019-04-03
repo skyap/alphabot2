@@ -1,5 +1,5 @@
 # alphabot2
-https://github.com/skyap/alphabot2/blob/master/README_python_installation.md
+
 ## About
 <img src="https://github.com/skyap/alphabot2/blob/master/images/alphabot2-pizero-8.jpg" width="400"></br>
 1. To create a easy to use API for students to interact with alphabot2</br>
@@ -7,6 +7,9 @@ https://github.com/skyap/alphabot2/blob/master/README_python_installation.md
 
 official webpage:</br>
 https://www.waveshare.com/wiki/alphabot2</br>
+## Python 3 Installation & Setup Guide
+Please follow below link to install Python 3 on your system</br>
+<a href="https://github.com/skyap/alphabot2/blob/master/README_python_installation.md" target="_blank">https://github.com/skyap/alphabot2/blob/master/README_python_installation.md</a>
 ## Install, Upgrade and Uninstall
 1. install the libaries
 ```
